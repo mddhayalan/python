@@ -23,5 +23,5 @@ def add_student(name, student_id=332):
 while input("Do you want to add new student details ? (yes/no): ") == "yes":
     student_name = input("Enter student name: ")
     student_id = input("Enter student id: ")
-    add_student(student_name, student_id)
+    add_student(student_name, student_id) 
 
