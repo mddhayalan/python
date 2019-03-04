@@ -2,3 +2,5 @@
 .idea/workspace.xml
 .vscode/settings.json
 .idea/workspace.xml
+Reporter/__pycache__/Main.cpython-37.pyc
+.gitignore
