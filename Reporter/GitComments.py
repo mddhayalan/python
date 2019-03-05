@@ -17,4 +17,8 @@ if active_branch == selectedBranch:
     print("No switch branch required, as the repo is in branch: "+active_branch)
 else:
     repo.git.checkout(selectedBranch)
-    print("Now checkedout: " + repo.active_branch.name)
+    print("Now checked out: " + repo.active_branch.name)
+commits = [] # This list contains all the commits in descending order, we can use this to populate both the from and to revisions combobox
+for c in repo.iter_commits():
+    commits.append(c)
+# TODO: once the To revision is selected we can create a sublist just to list revision from preceding revision till the end.
