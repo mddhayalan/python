@@ -19,6 +19,10 @@ else:
     repo.git.checkout(selectedBranch)
     print("Now checked out: " + repo.active_branch.name)
 commits = [] # This list contains all the commits in descending order, we can use this to populate both the from and to revisions combobox
+print("The following are the commit ID in the branch: ")
 for c in repo.iter_commits():
     commits.append(c)
+    print("{0} -> {1} --> {2}".format(c.hexsha, c.author.name, c.summary))
 # TODO: once the To revision is selected we can create a sublist just to list revision from preceding revision till the end.
+toCommit = input("Enter the To revision: ")
+fromCommit= input("Enter the From revision: ")
