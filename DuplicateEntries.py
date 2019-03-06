@@ -2,7 +2,7 @@ import csv
 
 uniqueList = []
 duplicateList = []
-with open('C:\Views\Trunk\Build_\ApprovedBinaries.txt', 'r') as csvFile:
+with open(r'C:\Views\Trunk\Build_\ApprovedBinaries.txt', 'r') as csvFile:
     reader = csv.reader(csvFile)
     for row in reader:
         if row is not []:
