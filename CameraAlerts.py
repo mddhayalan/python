@@ -12,19 +12,20 @@ else:
     cameraId = sys.argv[1]
     print(sys.argv[2] + " alerts will be created in " + sys.argv[3] + " seconds interval each" )
 
-response = requests.post("http://10.0.0.14:6464/IOTHUB_HttpServer/oauth/token", data={'username': 'trinity', 'password': 'trinity@123', 'grant_type': 'password'}, auth=('trinity-client', 'trinity-secret') )
-if response.status_code != 200:
-    print("request failed", response.status_code)
-    sys.exit()
-content = json.loads(response.content)
-access_token = content["access_token"]
-bearerToken = f"Bearer {access_token}"
-print(bearerToken)
-header = {'Authorization': bearerToken, 'Content-Type': 'application/json', 'deviceId': cameraId}
+while counter > 0:
+    response = requests.post("http://10.0.0.14:6464/IOTHUB_HttpServer/oauth/token", data={'username': 'trinity', 'password': 'trinity@123', 'grant_type': 'password'}, auth=('trinity-client', 'trinity-secret') )
+    if response.status_code != 200:
+        print("request failed", response.status_code)
+        sys.exit()
+    content = json.loads(response.content)
+    access_token = content["access_token"]
+    bearerToken = f"Bearer {access_token}"
+    print(bearerToken)
+    header = {'Authorization': bearerToken, 'Content-Type': 'application/json', 'deviceId': cameraId}
 
-epochTime = int(time.time() * 1000)
+    epochTime = int(time.time() * 1000)
 
-payload ={
+    payload ={
     "sourceId": "1",
     "eventId": "218",
     "alertMessage": "Face Recoginition",
@@ -46,8 +47,9 @@ payload ={
     "alertId": "",
     "time": "",
     "alertTime": epochTime
-}
-
-
-cameraAlertResponse = requests.post("http://10.0.0.14:6464/IOTHUB_HttpServer/rest/VMSServices/VMSAnalyticsAlerts/3", headers=header, json=payload)
-print(cameraAlertResponse)
+    }
+    cameraAlertResponse = requests.post("http://10.0.0.14:6464/IOTHUB_HttpServer/rest/VMSServices/VMSAnalyticsAlerts/3", headers=header, json=payload)
+    print(cameraAlertResponse)
+    counter -= 1
+    time.sleep(interval)
+print("All alerts are created. Exiting the script.")
