@@ -32,7 +32,7 @@ while counter > 0:
     dateString = datetime.datetime.now()
     dateString = dateString.strftime('%Y-%m-%d %H:%M:%S')
     print("Truck alert created @ ", dateString)
-    latitude += 0.0001
-    longitude += 0.0001
+    latitude += 0.1
+    longitude += 0.1
 s.close()
 print("All truck alerts are created")
