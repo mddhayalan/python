@@ -15,7 +15,7 @@ else:
 buffer_size = 1024
 ip = "10.0.0.14"
 port=5001
-truckSpeed = 90 #speed more than 50 creates alert
+truckSpeed = 100 #speed more than 50 creates alert
 latitude = 14.243157
 longitude = 76.563828
 

@@ -42,7 +42,7 @@ while counter > 0:
     "cameraId": cameraId,
     "eventDetails3": "",
     "eventDetails1": "",
-    "imageUrl": "https://www.youtube.com/watch?time_continue=1&v=IBZGZg_FC4I&feature=emb_logo",
+    "imageUrl": "https://catalog.carlislefsp.com/images/240x240/270873.jpg",
     "eventTime": epochTime,
     "alertId": "",
     "time": "",

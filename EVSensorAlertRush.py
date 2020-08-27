@@ -41,11 +41,7 @@ print(dateString)
 #define topic and payload
 topic = "devices/ENV193734556JGD/messages"
 payload = '{"ENV":{"MAC":"ENV193734556JGD","NS":"NM","DATE":"123620","TIME":"211814","PS":"MP","NO2":"9.486513502946769","SO2":"1.62576351754545","CO":"0.5823456580333326","CO2":"500.938500829337","O3":"13.131981024728974","TEMP":"30.25609943692684","HUM":"78.49768640032687","UV":"","LIGHT":"9986.41","NOISE":"64.2195","PM2.5":"20.26244408520541","PM10":"26.245897764702836","AQI":"35"}}'
-#topic = "devices/BIN76424629/messages"
-#payloadstart = '{"VSDATA": {"CSQ": "","LN": "1.2994933333333336","VDP": "","PT": 0,"PV": "A","DLN": "","LT": "0.20366666666666663","IMEI": "BIN76424629","PID": "1852","DLT": "","TA": "","DT": "20191121","FX": "0","BV": "2944","HDP": "","DTF": "97","location": "","SN": "7022627289",'
-#payloadtime = f'"DATE_TIME": "{dateString}"'
-#payloadend = ',"PDP": "","SP": "","TS": "022644"},"MESSAGE_ID": 1574326801553}'
-#payload = payloadstart + payloadtime + payloadend
+
  
 #counter for alert creation in certain interval. eg; this below logic creates alerts every 30 sec for 50 mins (100 times)
 
